@@ -1,0 +1,485 @@
+:root{
+    /* -------------- */
+    /* PRIMARY COLORS */
+    /* -------------- */
+    --softRed: 7, 99%, 70%;
+    --yellow: 51, 100%, 49%;
+    /* graphic design text */
+    --darkCyan : 167, 40%, 24%;
+    /* photography text */
+    --darkBlue : 198, 62%, 26%;
+    /* footer */
+    --darkerCyan : 168, 34%, 41%;    
+    
+    /* NEUTRAL COLORS */
+    --darkDesaturatedBlue: 212, 27%, 19%;
+    --vdarkGrayishBlue: 213, 9%, 39%;
+    --darkGrayishBlue: 232, 10%, 55%;
+    --grayishBlue: 210, 4%, 67%;
+    --white: 0, 0%, 100%;
+
+    /* FONT FAMILY */
+    --ff-barlow: 'Barlow', sans-serif;
+    --ff-fraunces: 'Fraunces', serif;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    font-size: 18px;
+  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Fraunces', serif;   */
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  /* display: block; */
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------- */
+/* UTILITY CLASS */
+/* ------------- */
+.flex{
+    display: flex;
+}
+.grid{
+    display: grid;
+}
+.displayBlock{
+    display: block;
+}
+/* COLORS */
+.softRed{color: hsl(var(--softRed));}
+.yellow{background-color: hsl(var(--yellow));}
+.darkCyan{color: hsl(var(--darkCyan));}
+.darkerCyan{color: hsl(var(--darkerCyan));}
+.darkBlue{color: hsl(var(--darkBlue));}
+.darkDesatBlue{color: hsl(var(--darkDesaturatedBlue));}
+.grayBlue{color: hsl(var(--grayishBlue));}
+.darkGrayBlue{color: hsl(var(--darkGrayishBlue));}
+.vdarkGrayBlue{color: hsl(var(--vdarkGrayishBlue));}
+.white{color: hsl(var(--white));}
+/* TYPOGRAPHY */
+.ff-barlow { font-family: var(--ff-barlow); } 
+.ff-fraunces { font-family: var(--ff-fraunces); } 
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+.uppercase { text-transform: uppercase; }
+
+/* ----------- */
+/*  COMPONENTS */
+/* ----------- */
+.logo{
+    margin: 0 1em;
+}
+.primaryHeader{
+    justify-content: space-between;
+    align-items: center;
+}
+.primaryNavigation{
+    list-style: none;
+    gap: 2rem;
+    margin-right: 1.5em;
+}
+.primaryNavigation a{
+    text-decoration: none;
+    color: hsl(var(--white));
+}
+.mobileToggle{
+    display: none;
+}
+
+@media (max-width: 35rem){
+    .logo{
+        margin: 2em 1em;
+    }
+    .primaryNavigation{
+        background-color: hsl(var(--white));
+        position: fixed;
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+        top: 6rem;
+        left: 50%;
+        padding: 4rem;
+        z-index: 10;  
+        border-radius: 10px;       
+        transform: translateX(100%);
+        transition: transform 500ms ease-in-out; 
+    }
+    .primaryNavigation[data-visible="true"] {
+        transform: translateX(-50%);
+    }
+
+    .primaryNavigation a{
+        text-decoration: none;
+        color: hsl(var(--grayishBlue));
+    }
+    .mobileToggle{  
+        cursor: pointer;
+        display: BLOCK;
+        background: transparent;
+        background-image: url(./images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        aspect-ratio: 1;
+        width: 2rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 2rem;
+    }
+}
+
+/* ------ */
+/* LAYOUT */
+/* ------ */
+.container{
+    display: grid;
+    grid-template-areas: 
+        'banner'
+        'sectionOne'
+        'sectionTwo'
+        'sectionThree'
+        'sectionFour'
+        'testimonialSection'
+        'imageSection'
+        'end';
+}
+.container > .banner{
+    grid-area: banner;
+}
+.container > .egg{
+    grid-area: egg;
+}
+.container > .sectionOne{
+    grid-area: sectionOne;
+}
+.container > .sectionTwo{
+    grid-area: sectionTwo;
+}
+.container > .sectionThree{
+    grid-area: sectionThree;
+}
+.container > .sectionFour{
+    grid-area: sectionFour;
+}
+.container > .testimonialSection{
+    grid-area: testimonialSection;
+}
+.container > .imageSection{
+    grid-area: imageSection;
+}
+.container > .end{
+    grid-area: end;
+}
+.banner{
+    background-image: url(images/mobile/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+    height: 100vh;
+    
+}
+.banner > .bannerContent{
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;    
+    padding-block: 2em;
+    padding-inline: 0.5em;
+}
+.bannerContent h1{
+    font-size: 42px;
+}
+.sectionOne{
+    flex-direction: column;
+}
+.sectionOneText{
+    padding-block: 4em;
+    padding-inline: 2em;
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+    font-weight: 900;
+    font-size: 24px;
+}
+.sectionOneText h2{
+    padding-inline: 1em;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 2.5rem;
+}
+.sectionOneText h3{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: 6px underline;
+    text-decoration-color: hsl(51, 100%, 49%,.4)    
+}
+.sectionTwo{
+    flex-direction: column;
+}
+.sectionTwoText{
+    padding-block: 4em;
+    padding-inline: 2em;
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+    font-weight: 900;
+    font-size: 24px;
+}
+.sectionTwoText h2{
+    padding-inline: 1em;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 2.5rem;
+}
+.sectionTwoText h3{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: 6px underline;
+    text-decoration-color: hsl(7, 99%, 70%,.4)
+}
+.sectionThree{
+    position: relative;
+}
+.sectionThree > .cherryImageDesktop{
+    display: none;
+}
+.sectionThree > .cherryText{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: hsl(var(--darkCyan)); 
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 4em;
+    padding-inline: 1em;
+}
+.sectionThree > .cherryText h2{
+    font-weight: 900;
+    font-size: 34px;
+}
+.sectionThree > .cherryText p{
+    font-weight: 900;
+    font-size: 22px;
+}
+.sectionFour{
+    position: relative;
+}
+.sectionFour > .orangeImageDesktop{
+    display: none;
+}
+.sectionFour > .orangeText{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: hsl(var(--darkBlue));
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 4em;
+    padding-inline: 1em;
+}
+.sectionFour > .orangeText h2{
+    font-weight: 900;
+    font-size: 34px;
+}
+.sectionFour > .orangeText p{
+    font-weight: 900;
+    font-size: 22px;
+}
+.testimonialSection h2{
+    text-align: center;
+    font-size: 22px;
+    padding-top: 3em;
+}
+.testimonials{  
+    font-size: 22px;
+    text-align: center;
+    padding-bottom: 3em;
+}
+.testimonials > *{
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-inline: 2em;
+    padding-top: 3em;
+}
+.testimonials img{
+    align-self: center;
+    max-width: 20%;
+    border-radius: 50%;
+}
+.imageSection{
+    grid-template-columns: 1fr 1fr;
+}
+.end{
+    background-color: rgb(144, 227, 199);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 2.5em;
+}
+.end > h2{
+    font-weight: 900;
+    font-size: 30px;
+}
+.end > .secondaryNavigation{
+    list-style: none;
+    gap: 3rem;
+    padding: 0;
+}
+.end > .secondaryNavigation a{
+    text-decoration: none;
+    color: hsl(var(--darkCyan));  
+   
+}
+.logos{
+    gap: 2rem;
+}
+
+@media (min-width: 45em) {
+    .container{
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            'banner banner banner banner'
+            'sectionOne sectionOne sectionOne sectionOne'
+            'sectionTwo sectionTwo sectionTwo sectionTwo'
+            'sectionThree sectionThree sectionFour sectionFour'
+            'testimonialSection testimonialSection testimonialSection testimonialSection'
+            'imageSection imageSection imageSection imageSection'
+            'end end end end';
+    }
+    .banner{
+        background-image: url(images/desktop/image-header.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;        
+    }
+    .sectionOne{
+        flex-direction: row-reverse;
+    }
+    .sectionOne img{
+        flex-basis: 50%;
+    }
+    .sectionOne > .sectionOneText{  
+        flex-basis: 50%;
+        padding: 2em;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1.5rem;
+        font-weight: 900;
+    }
+    .sectionTwo{
+        flex-direction: row;
+    }
+    .sectionTwo img{
+        flex-basis: 50%;
+    }
+    .sectionTwo > .sectionTwoText{    
+        flex-basis: 50%;   
+        padding: 2em;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .sectionThree > .cherryImageDesktop{
+        display: block;
+        flex-basis: 100%;
+    }
+    .sectionThree > .cherryImageMobile{
+        display: none;
+    }
+    .sectionFour > .orangeImageDesktop{
+        display: block;
+        flex-basis: 100%;
+    }
+    .sectionFour > .orangeImageMobile{
+        display: none;
+    }
+    .testimonialSection{
+        padding: 2em;
+    }
+    .testimonials{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imageSection{
+        display: flex;
+    }
+}

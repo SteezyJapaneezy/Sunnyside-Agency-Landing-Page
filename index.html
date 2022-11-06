@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="banner">
+      <header class="primaryHeader flex">
+        <div>
+          <img class="logo" src="images/logo.svg" alt="Company Logo">
+        </div>
+        <button class="mobileToggle" aria-expanded="false"></button>
+        <nav>
+          <ul class="primaryNavigation flex" data-visible="false">
+            <li><a href="#">About</a>
+            <li><a href="#">Services</a>
+            <li><a href="#">Projects</a>
+            <li><a href="#">Contact</a>
+          </ul>
+        </nav>
+      </header>
+      <div class="bannerContent flex">
+        <h1 class="ff-fraunces white uppercase letter-spacing-1" >We are creatives</h1>
+        <div class="arrow">
+          <img src="images/icon-arrow-down.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="sectionOne flex">
+      <img src="images/mobile/image-transform.jpg" alt="Image Of An Egg">
+      <div class="sectionOneText flex">
+        <h2 class="ff-fraunces">Transform your brand</h2>
+        <p class="darkGrayBlue">We are a full-service creative agency specializing in helping brands grow fast. 
+          Engage your clients through compelling visuals that do most of the marketing for you.
+        </p>
+        <h3 class="ff-fraunces uppercase">Learn more</h3>
+      </div>
+    </div>
+
+    <div class="sectionTwo flex">
+      <img src="images/mobile/image-stand-out.jpg" alt="Image Of A Glass">
+      <div class="sectionTwoText flex">
+        <h2 class="ff-fraunces">Stand out to the right audience</h2>
+        <p class="darkGrayBlue">Using a collaborative formula of designers, researchers, photographers, 
+          videographers, and copywriters, we’ll build and extend your brand in digital places.
+        </p>
+        <h3 class="ff-fraunces uppercase">Learn more</h3>
+      </div>
+    </div>
+
+    <div class="sectionThree flex">
+      <img class="cherryImageDesktop" src="images/desktop/image-graphic-design.jpg" alt="Image Of cherries">
+      <img class="cherryImageMobile" src="images/mobile/image-graphic-design.jpg" alt="Image Of cherries">
+      <div class="cherryText flex">
+        <h2 class="ff-fraunces">Graphic Design</h2>
+        <p>Great design makes you memorable. We deliver artwork that underscores
+            your brand message and captures potential clients’ attention.
+        </p>
+      </div>  
+    </div>
+      
+    <div class="sectionFour flex">
+      <img class="orangeImageDesktop" src="images/desktop/image-photography.jpg" alt="Image Of cherries">
+      <img class="orangeImageMobile" src="images/mobile/image-photography.jpg" alt="Image Of cherries">
+      <div class="orangeText flex">
+        <h2 class="ff-fraunces">Photography</h2>
+        <p>Increase your credibility by getting the most stunning, 
+            high-quality photos that improve your business image.
+        </p>
+      </div>
+    </div>
+ 
+    <div class="testimonialSection">   
+      <h2 class="ff-fraunces uppercase grayBlue letter-spacing-1">Client testimonials</h2>
+      <div class="testimonials">
+        <div class="testOne flex">
+          <img src="images/image-emily.jpg" alt="">
+          <p class="darkGrayBlue">We put our trust in Sunnyside and they delivered, 
+          making sure our needs were met and deadlines were always hit.
+          </p>
+          <h3 class="ff-fraunces">Emily R.</h3>
+          <p class="grayBlue">Marketing Director</p>
+        </div>
+        <div class="testTwo flex">
+          <img src="images/image-thomas.jpg" alt="">
+          <p class="darkGrayBlue">Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success 
+          made it a satisfying and enjoyable experience.
+          </p>
+          <h3 class="ff-fraunces">Thomas S.</h3>
+          <p class="grayBlue">Chief Operating Officer</p>
+        </div>    
+        <div class="testThree flex">
+          <img src="images/image-jennie.jpg" alt="">
+          <p class="darkGrayBlue">Incredible end result! Our sales increased over 400% 
+          when we worked with Sunnyside. Highly recommended!
+          </p>
+          <h3 class="ff-fraunces">Jennie F.</h3>
+          <p class="grayBlue">Business Owner</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="imageSection grid">
+      <picture class="milkImage flex">
+        <source
+        media="(min-width: 650px)"
+        srcset="images/desktop/image-gallery-milkbottles.jpg">
+        <source
+        media="(min-width: 465px)"
+        srcset="images/mobile/image-gallery-milkbottles.jpg">
+        <img 
+        src="images/mobile/image-gallery-milkbottles.jpg" 
+        alt="Picture of milk">
+      </picture>
+      <picture class="orangeImage flex">
+        <source
+        media="(min-width: 650px)"
+        srcset="images/desktop/image-gallery-orange.jpg">
+        <source
+        media="(min-width: 465px)"
+        srcset="images/mobile/image-gallery-orange.jpg">
+        <img 
+        src="images/mobile/image-gallery-orange.jpg" 
+        alt="Picture of milk">
+      </picture>
+      <picture class="coneImage flex">
+        <source
+        media="(min-width: 650px)"
+        srcset="images/desktop/image-gallery-cone.jpg">
+        <source
+        media="(min-width: 465px)"
+        srcset="images/mobile/image-gallery-cone.jpg">
+        <img 
+        src="images/mobile/image-gallery-cone.jpg" 
+        alt="Picture of cone">
+      </picture>
+      <picture class="sugarImage flex">
+        <source
+        media="(min-width: 650px)"
+        srcset="images/desktop/image-gallery-sugarcubes.jpg">
+        <source
+        media="(min-width: 465px)"
+        srcset="images/mobile/image-gallery-sugar-cubes.jpg">
+        <img 
+        src="images/mobile/image-gallery-sugar-cubes.jpg" 
+        alt="Picture of sugar">
+      </picture>
+    </div> 
+    
+
+    <div class="end flex">
+      <h2 class="darkCyan">sunnyside</h2>
+      <ul class="secondaryNavigation flex">
+        <li><a href="#">About</a>
+        <li><a href="#">Services</a>
+        <li><a href="#">Projects</a>
+      </ul>
+      <div class="logos flex">
+        <a href="#"><img src="images/icon-facebook.svg" alt=""></a>
+        <a href="#"><img src="images/icon-instagram.svg" alt=""></a>
+        <a href="#"><img src="images/icon-twitter.svg" alt=""></a>
+        <a href="#"><img src="images/icon-pinterest.svg" alt=""></a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
